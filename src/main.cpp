@@ -23,13 +23,13 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		m_controlSprite->setPosition(m_controlPosition);
 	}
 	void onCW26Point56505118(CCObject* sender) {
-		if (!sender || sender->getTag() != 12102025) return;
-		if (!m_delegate) return;
+		if (!sender || !m_delegate) return;
+		log::info("onCW26Point56505118");
 		this->rotateObjectBy2656505118(false);
 	}
 	void onCCW26Point56505118(CCObject* sender) {
-		if (!sender || sender->getTag() != 12102025) return;
-		if (!m_delegate) return;
+		if (!sender || !m_delegate) return;
+		log::info("onCCW26Point56505118");
 		this->rotateObjectBy2656505118(true);
 	}
 	void rotateObjectBy2656505118(const bool isCCW) {
