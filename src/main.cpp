@@ -42,8 +42,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		if (!GJRotationControl::init()) return false;	
 
 		auto menu = CCMenu::create();
-		menu->setContentHeight(35.f);
-		menu->setContentWidth(95.f);
+		menu->setContentWidth(170.f);
 		menu->setID("26-point-56505118-menu"_spr);
 		menu->setPosition(0.f, 90.f);
 
