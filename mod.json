@@ -1,17 +1,17 @@
 {
-	"geode": "4.9.0",
+	"geode": "4.10.0",
 	"gd": {
 		"win": "2.2074",
 		"mac": "2.2074",
 		"ios": "2.2074",
 		"android": "2.2074"
 	},
-	"id": "raydeeux.modname",
-	"name": "ModName",
+	"id": "raydeeux.26point56505118",
+	"name": "26Point56505118",
 	"version": "v1.0.0",
 	"developer": "RayDeeUx",
-	"description": "Mod description.",
-	"repository": "https://github.com/RayDeeUx/ModName",
+	"description": "Rotate objects by 26.56505118 degrees!",
+	"repository": "https://github.com/RayDeeUx/26Point56505118",
 	"settings": {
 		"enabled": {
 			"name": "Enabled",
@@ -19,11 +19,6 @@
 			"type": "bool",
 			"default": true
 		}
-	},
-	"resources": {
-		"sprites": [
-			"resources/*.png"
-		]
 	},
 	"issues": {
 		"url": "https://discord.com/channels/911701438269386882/1205523212444639292",
