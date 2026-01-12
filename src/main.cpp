@@ -3,6 +3,8 @@
 
 using namespace geode::prelude;
 
+#define ARCTAN_ONE_HALF 26.56505117707798935157219372045329467120421429964522102798601631528806582148474061170857381060216472
+
 class $modify(MyGJRotationControl, GJRotationControl) {
 	// stolen from hjfod
 	static float angleOfPointOnCircle(CCPoint const& point) {
@@ -32,7 +34,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 	}
 	void rotateObjectBy2656505118(const bool isCCW) {
 		if (!m_delegate) return;
-		const float newAngle = this->getThumbValue() + (!isCCW ? 26.56505118 : -26.56505118);
+		const float newAngle = this->getThumbValue() + (!isCCW ? ARCTAN_ONE_HALF : -ARCTAN_ONE_HALF);
                 m_delegate->angleChangeBegin();
                 m_delegate->angleChanged(newAngle);
                 m_delegate->angleChangeEnded();
