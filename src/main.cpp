@@ -86,19 +86,30 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 	void setRotationToOneHundredSixteen(const bool makeNegative) {
 		MyGJRotationControl::setRotationTo((!makeNegative ? 1.f : -1.f) * (90.f + ARCTAN_ONE_HALF));
 	}
+	void onNegativeTwoHundredSix(CCObject* sender) {
+		if (!sender || !m_delegate || sender->getTag() != 20260114) return;
+		MyGJRotationControl::setRotationTo(-ARCTAN_ONE_HALF - 180.f);
+	}
+	void onNegativeTwoHundredFourtyThree(CCObject* sender) {
+		if (!sender || !m_delegate || sender->getTag() != 20260114) return;
+		MyGJRotationControl::setRotationTo(-(90.f - ARCTAN_ONE_HALF) - 180.f);
+	}
 	bool init() {
 		if (!GJRotationControl::init()) return false;
 
 		CCMenu* menu = CCMenu::create();
 		menu->setScale(.6f);
 		menu->setID("26-point-56505118-menu"_spr);
-		menu->setPosition(0.f, 100.f);
+		menu->setPosition(0.f, 80.f);
+		menu->setAnchorPoint({.5, 1.});
 
 		const bool highPrecisionRotation = Loader::get()->isModLoaded("kxtbit.high_precision_editor") && Loader::get()->getLoadedMod("kxtbit.high_precision_editor")->getSettingValue<bool>("full-precision-object-rotation");
 		const std::string& twentySix = highPrecisionRotation ? "26.56505118" : "26.57";
 		const std::string& sixtyThree = highPrecisionRotation ? "63.43494882" : "63.43";
 		const std::string& oneHundredFiftyThree = highPrecisionRotation ? "153.4349488" : "153.4";
 		const std::string& oneHundredSixteen = highPrecisionRotation ? "116.5650512" : "116.6";
+		const std::string& negativeTwoHundredSix = highPrecisionRotation ? "-206.5650512" : "-206.5";
+		const std::string& negativeTwoHundredFourtyThree = highPrecisionRotation ? "-243.4349488" : "-243.4";
 
 		const std::string& determinedSpriteFrameName = Loader::get()->isModLoaded("hjfod.betteredit") ? "hjfod.betteredit/button-empty.png" : "geode.loader/black-square.png";
 
@@ -181,6 +192,22 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonOneHundredSixteen->setTag(20260114);
 		buttonOneHundredSixteen->setID("26-point-56505118-one-hundred-sixteen"_spr);
 		menu->addChild(buttonOneHundredSixteen);
+
+		ButtonSprite* buttonSpriteTwoHundredSix = ButtonSprite::create(fmt::format("+{}", negativeTwoHundredSix).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		buttonSpriteTwoHundredSix->setScale(.65f);
+		buttonSpriteTwoHundredSix->setID("26-point-56505118-two-hundred-six-sprite"_spr);
+		CCMenuItemSpriteExtra* buttonTwoHundredSix = CCMenuItemSpriteExtra::create(buttonSpriteTwoHundredSix, this, menu_selector(MyGJRotationControl::onNegativeTwoHundredSix));
+		buttonTwoHundredSix->setTag(20260114);
+		buttonTwoHundredSix->setID("26-point-56505118-negative-two-hundred-six"_spr);
+		menu->addChild(buttonTwoHundredSix);
+
+		ButtonSprite* buttonSpriteFourtyThree = ButtonSprite::create(fmt::format("+{}", negativeTwoHundredFourtyThree).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		buttonSpriteFourtyThree->setScale(.65f);
+		buttonSpriteFourtyThree->setID("26-point-56505118-two-hundred-six-sprite"_spr);
+		CCMenuItemSpriteExtra* buttonFourtyThree = CCMenuItemSpriteExtra::create(buttonSpriteFourtyThree, this, menu_selector(MyGJRotationControl::onNegativeTwoHundredFourtyThree));
+		buttonFourtyThree->setTag(20260114);
+		buttonFourtyThree->setID("26-point-56505118-negative-two-hundred-six"_spr);
+		menu->addChild(buttonTwoHundredSix);
 
 		menu->setContentWidth(buttonCCW->getContentWidth() + buttonCW->getContentWidth());
 		menu->setLayout(RowLayout::create()->setAutoScale(true)->setCrossAxisOverflow(true)->setGrowCrossAxis(true));
