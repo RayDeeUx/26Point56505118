@@ -3,7 +3,7 @@
 
 using namespace geode::prelude;
 
-#define ARCTAN_ONE_HALF 26.56505117707798935157219372045329467120421429964522102798601631528806582148474061170857381060216472
+#define ARCTAN_ONE_HALF 26.56505117707798935157219372045329467120421429964522102798601631528806582148474061170857381060216472f
 
 class $modify(MyGJRotationControl, GJRotationControl) {
 	// stolen from hjfod
@@ -24,21 +24,23 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		m_controlPosition = pointOnCircle(value, 60);
 		m_controlSprite->setPosition(m_controlPosition);
 	}
-	void onCW26Point56505118(CCObject* sender) {
-		if (!sender || !m_delegate || sender->getTag() != 12102025) return;
-		this->rotateObjectBy2656505118(false);
-	}
-	void onCCW26Point56505118(CCObject* sender) {
-		if (!sender || !m_delegate || sender->getTag() != 12102025) return;
-		this->rotateObjectBy2656505118(true);
-	}
-	void rotateObjectBy2656505118(const bool isCCW) {
+	void setRotationTo(const float newAngle) {
 		if (!m_delegate) return;
-		const float newAngle = this->getThumbValue() + (!isCCW ? ARCTAN_ONE_HALF : -ARCTAN_ONE_HALF);
 		m_delegate->angleChangeBegin();
 		m_delegate->angleChanged(newAngle);
 		m_delegate->angleChangeEnded();
 		this->setThumbValue(newAngle);
+	}
+	void onCW26Point56505118(CCObject* sender) {
+		if (!sender || !m_delegate || sender->getTag() != 12102025) return;
+		this->rotateObjectBy2656505118(false);
+	}
+	void oonCCW26Point56505118(CCObject* sender) {
+		if (!sender || !m_delegate || sender->getTag() != 12102025) return;
+		this->rotateObjectBy2656505118(true);
+	}
+	void rotateObjectBy2656505118(const bool isCCW) {
+		MyGJRotationControl::setRotationTo(this->getThumbValue() + (!isCCW ? ARCTAN_ONE_HALF : -ARCTAN_ONE_HALF));
 	}
 	void on26Point56505118(CCObject* sender) {
 		if (!sender || !m_delegate || sender->getTag() != 20260114) return;
@@ -49,11 +51,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		this->setRotationTo2656505118(true);
 	}
 	void setRotationTo2656505118(const bool subtractFromNinety) {
-		if (!m_delegate) return;
-		m_delegate->angleChangeBegin();
-		m_delegate->angleChanged(!subtractFromNinety ? ARCTAN_ONE_HALF : (90 - ARCTAN_ONE_HALF));
-		m_delegate->angleChangeEnded();
-		this->setThumbValue(!subtractFromNinety ? ARCTAN_ONE_HALF : (90 - ARCTAN_ONE_HALF));
+		MyGJRotationControl::setRotationTo(!subtractFromNinety ? ARCTAN_ONE_HALF : (90.f - ARCTAN_ONE_HALF));
 	}
 	void on26Point56505118Mirrored(CCObject* sender) {
 		if (!sender || !m_delegate || sender->getTag() != 20260114) return;
@@ -64,21 +62,19 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		this->setRotationTo2656505118Mirrored(true);
 	}
 	void setRotationTo2656505118Mirrored(const bool subtractFromNinety) {
-		if (!m_delegate) return;
-		m_delegate->angleChangeBegin();
-		m_delegate->angleChanged(-1.f * (!subtractFromNinety ? ARCTAN_ONE_HALF : (90 - ARCTAN_ONE_HALF)));
-		m_delegate->angleChangeEnded();
-		this->setThumbValue(-1.f * (!subtractFromNinety ? ARCTAN_ONE_HALF : (90 - ARCTAN_ONE_HALF)));
+		MyGJRotationControl::setRotationTo(-1.f * (!subtractFromNinety ? ARCTAN_ONE_HALF : (90.f - ARCTAN_ONE_HALF)));
 	}
 	bool init() {
-		if (!GJRotationControl::init()) return false;	
+		if (!GJRotationControl::init()) return false;
 
 		auto menu = CCMenu::create();
 		menu->setScale(.6f);
 		menu->setID("26-point-56505118-menu"_spr);
 		menu->setPosition(0.f, 100.f);
 
-		const std::string& determinedSpriteText = Loader::get()->isModLoaded("kxtbit.high_precision_editor") && Loader::get()->getLoadedMod("kxtbit.high_precision_editor")->getSettingValue<bool>("full-precision-object-rotation") ? "26.56505118" : "26.57";
+		const bool highPrecisionRotation = Loader::get()->isModLoaded("kxtbit.high_precision_editor") && Loader::get()->getLoadedMod("kxtbit.high_precision_editor")->getSettingValue<bool>("full-precision-object-rotation");
+		const std::string& determinedSpriteText = highPrecisionRotation ? "26.56505118" : "26.57";
+		const std::string& theOtherThing = highPrecisionRotation ? "63.4349488229" : "63.43";
 
 		const std::string& determinedSpriteFrameName = Loader::get()->isModLoaded("hjfod.betteredit") ? "hjfod.betteredit/button-empty.png" : "geode.loader/black-square.png";
 
@@ -98,7 +94,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonCW->setID("26-point-56505118-clockwise"_spr);
 		menu->addChild(buttonCW);
 
-		ButtonSprite* buttonSpriteRSU = ButtonSprite::create(fmt::format("{}", determinedSpriteText).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		ButtonSprite* buttonSpriteRSU = ButtonSprite::create(fmt::format("-{}", determinedSpriteText).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteRSU->setScale(.65f);
 		buttonSpriteRSU->setID("26-point-56505118-right-side-up-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonRSU = CCMenuItemSpriteExtra::create(buttonSpriteRSU, this, menu_selector(MyGJRotationControl::on26Point56505118));
@@ -106,7 +102,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonRSU->setID("26-point-56505118-right-side-up"_spr);
 		menu->addChild(buttonRSU);
 
-		ButtonSprite* buttonSpriteRSUM = ButtonSprite::create(fmt::format("-{}", determinedSpriteText).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		ButtonSprite* buttonSpriteRSUM = ButtonSprite::create(fmt::format("+{}", determinedSpriteText).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteRSUM->setScale(.65f);
 		buttonSpriteRSUM->setID("26-point-56505118-right-side-up-mirrored-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonRSUM = CCMenuItemSpriteExtra::create(buttonSpriteRSUM, this, menu_selector(MyGJRotationControl::on26Point56505118Mirrored));
@@ -114,7 +110,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonRSUM->setID("26-point-56505118-right-side-up-mirrored"_spr);
 		menu->addChild(buttonRSUM);
 
-		ButtonSprite* buttonSpriteTTR = ButtonSprite::create(fmt::format("90 - {}", determinedSpriteText).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		ButtonSprite* buttonSpriteTTR = ButtonSprite::create(fmt::format("-{}", theOtherThing).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteTTR->setScale(.65f);
 		buttonSpriteTTR->setID("26-point-56505118-to-the-right-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonTTR = CCMenuItemSpriteExtra::create(buttonSpriteTTR, this, menu_selector(MyGJRotationControl::onNinetyMinus26Point56505118));
@@ -122,7 +118,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonTTR->setID("26-point-56505118-to-the-right"_spr);
 		menu->addChild(buttonTTR);
 
-		ButtonSprite* buttonSpriteTTRM = ButtonSprite::create(fmt::format("-(90 - {})", determinedSpriteText).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		ButtonSprite* buttonSpriteTTRM = ButtonSprite::create(fmt::format("+{}", theOtherThing).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteTTRM->setScale(.65f);
 		buttonSpriteTTRM->setID("26-point-56505118-to-the-right-mirrored-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonTTRM = CCMenuItemSpriteExtra::create(buttonSpriteTTRM, this, menu_selector(MyGJRotationControl::onNinetyMinus26Point56505118Mirrored));
