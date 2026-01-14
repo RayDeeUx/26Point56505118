@@ -74,9 +74,9 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		if (!GJRotationControl::init()) return false;	
 
 		auto menu = CCMenu::create();
-		menu->setContentWidth(170.f);
+		menu->setScale(.6f);
 		menu->setID("26-point-56505118-menu"_spr);
-		menu->setPosition(0.f, 90.f);
+		menu->setPosition(0.f, 100.f);
 
 		const std::string& determinedSpriteText = Loader::get()->isModLoaded("kxtbit.high_precision_editor") && Loader::get()->getLoadedMod("kxtbit.high_precision_editor")->getSettingValue<bool>("full-precision-object-rotation") ? "26.56505118" : "26.57";
 
