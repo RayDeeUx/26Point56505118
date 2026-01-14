@@ -159,7 +159,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		ButtonSprite* buttonSpriteOneHundredFiftyThree = ButtonSprite::create(fmt::format("+{}", theOtherThing).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteOneHundredFiftyThree->setScale(.65f);
 		buttonSpriteOneHundredFiftyThree->setID("26-point-56505118-one-hundred-fifty-three-sprite"_spr);
-		CCMenuItemSpriteExtra* buttonOneHundredFiftyThree = CCMenuItemSpriteExtra::create(buttonSpriteOneHundredFiftyThree, this, menu_selector(MyGJRotationControl::onOneH11undredFiftyThree));
+		CCMenuItemSpriteExtra* buttonOneHundredFiftyThree = CCMenuItemSpriteExtra::create(buttonSpriteOneHundredFiftyThree, this, menu_selector(MyGJRotationControl::onOneHundredFiftyThree));
 		buttonOneHundredFiftyThree->setTag(20260114);
 		buttonOneHundredFiftyThree->setID("26-point-56505118-one-hundred-fifty-three"_spr);
 		menu->addChild(buttonOneHundredFiftyThree);
