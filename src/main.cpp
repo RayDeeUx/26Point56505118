@@ -207,7 +207,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		CCMenuItemSpriteExtra* buttonFourtyThree = CCMenuItemSpriteExtra::create(buttonSpriteFourtyThree, this, menu_selector(MyGJRotationControl::onNegativeTwoHundredFourtyThree));
 		buttonFourtyThree->setTag(20260114);
 		buttonFourtyThree->setID("26-point-56505118-negative-two-hundred-six"_spr);
-		menu->addChild(buttonTwoHundredSix);
+		menu->addChild(buttonSpriteFourtyThree);
 
 		menu->setContentWidth(buttonCCW->getContentWidth() + buttonCW->getContentWidth());
 		menu->setLayout(RowLayout::create()->setAutoScale(true)->setCrossAxisOverflow(true)->setGrowCrossAxis(true));
