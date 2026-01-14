@@ -35,7 +35,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		if (!sender || !m_delegate || sender->getTag() != 12102025) return;
 		this->rotateObjectBy2656505118(false);
 	}
-	void oonCCW26Point56505118(CCObject* sender) {
+	void onCCW26Point56505118(CCObject* sender) {
 		if (!sender || !m_delegate || sender->getTag() != 12102025) return;
 		this->rotateObjectBy2656505118(true);
 	}
@@ -94,7 +94,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonCW->setID("26-point-56505118-clockwise"_spr);
 		menu->addChild(buttonCW);
 
-		ButtonSprite* buttonSpriteRSU = ButtonSprite::create(fmt::format("-{}", determinedSpriteText).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		ButtonSprite* buttonSpriteRSU = ButtonSprite::create(fmt::format("+{}", determinedSpriteText).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteRSU->setScale(.65f);
 		buttonSpriteRSU->setID("26-point-56505118-right-side-up-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonRSU = CCMenuItemSpriteExtra::create(buttonSpriteRSU, this, menu_selector(MyGJRotationControl::on26Point56505118));
@@ -102,7 +102,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonRSU->setID("26-point-56505118-right-side-up"_spr);
 		menu->addChild(buttonRSU);
 
-		ButtonSprite* buttonSpriteRSUM = ButtonSprite::create(fmt::format("+{}", determinedSpriteText).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		ButtonSprite* buttonSpriteRSUM = ButtonSprite::create(fmt::format("-{}", determinedSpriteText).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteRSUM->setScale(.65f);
 		buttonSpriteRSUM->setID("26-point-56505118-right-side-up-mirrored-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonRSUM = CCMenuItemSpriteExtra::create(buttonSpriteRSUM, this, menu_selector(MyGJRotationControl::on26Point56505118Mirrored));
@@ -110,7 +110,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonRSUM->setID("26-point-56505118-right-side-up-mirrored"_spr);
 		menu->addChild(buttonRSUM);
 
-		ButtonSprite* buttonSpriteTTR = ButtonSprite::create(fmt::format("-{}", theOtherThing).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		ButtonSprite* buttonSpriteTTR = ButtonSprite::create(fmt::format("+{}", theOtherThing).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteTTR->setScale(.65f);
 		buttonSpriteTTR->setID("26-point-56505118-to-the-right-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonTTR = CCMenuItemSpriteExtra::create(buttonSpriteTTR, this, menu_selector(MyGJRotationControl::onNinetyMinus26Point56505118));
@@ -118,7 +118,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonTTR->setID("26-point-56505118-to-the-right"_spr);
 		menu->addChild(buttonTTR);
 
-		ButtonSprite* buttonSpriteTTRM = ButtonSprite::create(fmt::format("+{}", theOtherThing).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		ButtonSprite* buttonSpriteTTRM = ButtonSprite::create(fmt::format("-{}", theOtherThing).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteTTRM->setScale(.65f);
 		buttonSpriteTTRM->setID("26-point-56505118-to-the-right-mirrored-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonTTRM = CCMenuItemSpriteExtra::create(buttonSpriteTTRM, this, menu_selector(MyGJRotationControl::onNinetyMinus26Point56505118Mirrored));
