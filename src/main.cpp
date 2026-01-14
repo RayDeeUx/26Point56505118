@@ -95,12 +95,14 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		menu->setPosition(0.f, 100.f);
 
 		const bool highPrecisionRotation = Loader::get()->isModLoaded("kxtbit.high_precision_editor") && Loader::get()->getLoadedMod("kxtbit.high_precision_editor")->getSettingValue<bool>("full-precision-object-rotation");
-		const std::string& determinedSpriteText = highPrecisionRotation ? "26.56505118" : "26.57";
-		const std::string& theOtherThing = highPrecisionRotation ? "63.43494882" : "63.43";
+		const std::string& twentySix = highPrecisionRotation ? "26.56505118" : "26.57";
+		const std::string& sixtyThree = highPrecisionRotation ? "63.43494882" : "63.43";
+		const std::string& oneHundredFiftyThree = highPrecisionRotation ? "153.4349488" : "153.4";
+		const std::string& oneHundredSixteen = highPrecisionRotation ? "116.5650512" : "116.6";
 
 		const std::string& determinedSpriteFrameName = Loader::get()->isModLoaded("hjfod.betteredit") ? "hjfod.betteredit/button-empty.png" : "geode.loader/black-square.png";
 
-		ButtonSprite* buttonSpriteCCW = ButtonSprite::create(fmt::format("-={}", determinedSpriteText).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .8f);
+		ButtonSprite* buttonSpriteCCW = ButtonSprite::create(fmt::format("-={}", twentySix).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .8f);
 		buttonSpriteCCW->setScale(.65f);
 		buttonSpriteCCW->setID("26-point-56505118-counterclockwise-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonCCW = CCMenuItemSpriteExtra::create(buttonSpriteCCW, this, menu_selector(MyGJRotationControl::onCCWTwentySix));
@@ -108,7 +110,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonCCW->setID("26-point-56505118-counterclockwise"_spr);
 		menu->addChild(buttonCCW);
 
-		ButtonSprite* buttonSpriteCW = ButtonSprite::create(fmt::format("+={}", determinedSpriteText).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .8f);
+		ButtonSprite* buttonSpriteCW = ButtonSprite::create(fmt::format("+={}", twentySix).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .8f);
 		buttonSpriteCW->setScale(.65f);
 		buttonSpriteCW->setID("26-point-56505118-clockwise-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonCW = CCMenuItemSpriteExtra::create(buttonSpriteCW, this, menu_selector(MyGJRotationControl::onCWTwentySix));
@@ -116,7 +118,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonCW->setID("26-point-56505118-clockwise"_spr);
 		menu->addChild(buttonCW);
 
-		ButtonSprite* buttonSpriteNegativeTwentySix = ButtonSprite::create(fmt::format("-{}", determinedSpriteText).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		ButtonSprite* buttonSpriteNegativeTwentySix = ButtonSprite::create(fmt::format("-{}", twentySix).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteNegativeTwentySix->setScale(.65f);
 		buttonSpriteNegativeTwentySix->setID("26-point-56505118-negative-twenty-six-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonNegativeTwentySix = CCMenuItemSpriteExtra::create(buttonSpriteNegativeTwentySix, this, menu_selector(MyGJRotationControl::onNegativeTwentySix));
@@ -124,7 +126,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonNegativeTwentySix->setID("26-point-56505118-negative-twenty-six"_spr);
 		menu->addChild(buttonNegativeTwentySix);
 
-		ButtonSprite* buttonSpriteTwentySix = ButtonSprite::create(fmt::format("+{}", determinedSpriteText).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		ButtonSprite* buttonSpriteTwentySix = ButtonSprite::create(fmt::format("+{}", twentySix).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteTwentySix->setScale(.65f);
 		buttonSpriteTwentySix->setID("26-point-56505118-twenty-six-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonTwentySix = CCMenuItemSpriteExtra::create(buttonSpriteTwentySix, this, menu_selector(MyGJRotationControl::onTwentySix));
@@ -132,7 +134,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonTwentySix->setID("26-point-56505118-twenty-six"_spr);
 		menu->addChild(buttonTwentySix);
 
-		ButtonSprite* buttonSpriteNegativeSixtyThree = ButtonSprite::create(fmt::format("-{}", theOtherThing).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		ButtonSprite* buttonSpriteNegativeSixtyThree = ButtonSprite::create(fmt::format("-{}", sixtyThree).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteNegativeSixtyThree->setScale(.65f);
 		buttonSpriteNegativeSixtyThree->setID("26-point-56505118-negative-sixty-three-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonNegativeSixtyThree = CCMenuItemSpriteExtra::create(buttonSpriteNegativeSixtyThree, this, menu_selector(MyGJRotationControl::onNegativeSixtyThree));
@@ -140,7 +142,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonNegativeSixtyThree->setID("26-point-56505118-negative-sixty-three"_spr);
 		menu->addChild(buttonNegativeSixtyThree);
 
-		ButtonSprite* buttonSpriteSixtyThree = ButtonSprite::create(fmt::format("+{}", theOtherThing).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		ButtonSprite* buttonSpriteSixtyThree = ButtonSprite::create(fmt::format("+{}", sixtyThree).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteSixtyThree->setScale(.65f);
 		buttonSpriteSixtyThree->setID("26-point-56505118-sixty-three-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonSixtyThree = CCMenuItemSpriteExtra::create(buttonSpriteSixtyThree, this, menu_selector(MyGJRotationControl::onSixtyThree));
@@ -148,7 +150,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonSixtyThree->setID("26-point-56505118-sixty-three"_spr);
 		menu->addChild(buttonSixtyThree);
 
-		ButtonSprite* buttonSpriteNegativeOneHundredFiftyThree = ButtonSprite::create(fmt::format("-{}", theOtherThing).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		ButtonSprite* buttonSpriteNegativeOneHundredFiftyThree = ButtonSprite::create(fmt::format("-{}", oneHundredFiftyThree).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteNegativeOneHundredFiftyThree->setScale(.65f);
 		buttonSpriteNegativeOneHundredFiftyThree->setID("26-point-56505118-negative-one-hundred-fifty-three-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonNegativeOneHundredFiftyThree = CCMenuItemSpriteExtra::create(buttonSpriteNegativeOneHundredFiftyThree, this, menu_selector(MyGJRotationControl::onNegativeOneHundredFiftyThree));
@@ -156,7 +158,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonNegativeOneHundredFiftyThree->setID("26-point-56505118-negative-one-hundred-fifty-three"_spr);
 		menu->addChild(buttonNegativeOneHundredFiftyThree);
 
-		ButtonSprite* buttonSpriteOneHundredFiftyThree = ButtonSprite::create(fmt::format("+{}", theOtherThing).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		ButtonSprite* buttonSpriteOneHundredFiftyThree = ButtonSprite::create(fmt::format("+{}", oneHundredFiftyThree).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteOneHundredFiftyThree->setScale(.65f);
 		buttonSpriteOneHundredFiftyThree->setID("26-point-56505118-one-hundred-fifty-three-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonOneHundredFiftyThree = CCMenuItemSpriteExtra::create(buttonSpriteOneHundredFiftyThree, this, menu_selector(MyGJRotationControl::onOneHundredFiftyThree));
@@ -164,7 +166,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonOneHundredFiftyThree->setID("26-point-56505118-one-hundred-fifty-three"_spr);
 		menu->addChild(buttonOneHundredFiftyThree);
 
-		ButtonSprite* buttonSpriteNegativeOneHundredSixteen = ButtonSprite::create(fmt::format("-{}", theOtherThing).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		ButtonSprite* buttonSpriteNegativeOneHundredSixteen = ButtonSprite::create(fmt::format("-{}", oneHundredSixteen).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteNegativeOneHundredSixteen->setScale(.65f);
 		buttonSpriteNegativeOneHundredSixteen->setID("26-point-56505118-negative-one-hundred-sixteen-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonNegativeOneHundredSixteen = CCMenuItemSpriteExtra::create(buttonSpriteNegativeOneHundredSixteen, this, menu_selector(MyGJRotationControl::onNegativeOneHundredSixteen));
@@ -172,7 +174,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonNegativeOneHundredSixteen->setID("26-point-56505118-negative-one-hundred-sixteen"_spr);
 		menu->addChild(buttonNegativeOneHundredSixteen);
 
-		ButtonSprite* buttonSpriteOneHundredSixteen = ButtonSprite::create(fmt::format("+{}", theOtherThing).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		ButtonSprite* buttonSpriteOneHundredSixteen = ButtonSprite::create(fmt::format("+{}", oneHundredSixteen).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteOneHundredSixteen->setScale(.65f);
 		buttonSpriteOneHundredSixteen->setID("26-point-56505118-one-hundred-sixteen-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonOneHundredSixteen = CCMenuItemSpriteExtra::create(buttonSpriteOneHundredSixteen, this, menu_selector(MyGJRotationControl::onOneHundredSixteen));
