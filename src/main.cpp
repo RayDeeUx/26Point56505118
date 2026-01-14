@@ -7,21 +7,21 @@ using namespace geode::prelude;
 
 class $modify(MyGJRotationControl, GJRotationControl) {
 	// stolen from hjfod
-	static float angleOfPointOnCircle(CCPoint const& point) {
-		return atan2f(point.y, point.x) * (180.f / std::numbers::pi_v<float>);
+	static float angleOfPointOnCircle(const CCPoint& point) {
+		return std::atan2f(point.y, point.x) * (180.f / std::numbers::pi_v<float>);
 	}
-	static CCPoint pointOnCircle(float degrees, float radius) {
+	static CCPoint pointOnCircle(const float degrees, const float radius) {
 		return ccp(
-			cosf(degrees * std::numbers::pi_v<float> / 180.f) * radius,
-			sinf(degrees * std::numbers::pi_v<float> / 180.f) * radius
+			std::cosf(degrees * std::numbers::pi_v<float> / 180.f) * radius,
+			std::sinf(degrees * std::numbers::pi_v<float> / 180.f) * radius
 		);
 	}
 	float getThumbValue() const {
-		return -angleOfPointOnCircle(m_controlPosition) + 90;
+		return -MyGJRotationControl::angleOfPointOnCircle(m_controlPosition) + 90;
 	}
 	void setThumbValue(float value) {
 		value = -value + 90;
-		m_controlPosition = pointOnCircle(value, 60);
+		m_controlPosition = MyGJRotationControl::pointOnCircle(value, 60);
 		m_controlSprite->setPosition(m_controlPosition);
 	}
 	void setRotationTo(const float newAngle) {
