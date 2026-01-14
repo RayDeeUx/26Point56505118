@@ -35,10 +35,25 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 	void rotateObjectBy2656505118(const bool isCCW) {
 		if (!m_delegate) return;
 		const float newAngle = this->getThumbValue() + (!isCCW ? ARCTAN_ONE_HALF : -ARCTAN_ONE_HALF);
-                m_delegate->angleChangeBegin();
-                m_delegate->angleChanged(newAngle);
-                m_delegate->angleChangeEnded();
-                this->setThumbValue(newAngle);
+		m_delegate->angleChangeBegin();
+		m_delegate->angleChanged(newAngle);
+		m_delegate->angleChangeEnded();
+		this->setThumbValue(newAngle);
+	}
+	void on26Point56505118(CCObject* sender) {
+		if (!sender || !m_delegate || sender->getTag() != 20260114) return;
+		this->setRotationTo2656505118(false);
+	}
+	void onNinetyMinus26Point56505118(CCObject* sender) {
+		if (!sender || !m_delegate || sender->getTag() != 20260114) return;
+		this->setRotationTo2656505118(true);
+	}
+	void setRotationTo2656505118(const bool subtractFromNinety) {
+		if (!m_delegate) return;
+		m_delegate->angleChangeBegin();
+		m_delegate->angleChanged(!subtractFromNinety ? ARCTAN_ONE_HALF : (90 - ARCTAN_ONE_HALF));
+		m_delegate->angleChangeEnded();
+		this->setThumbValue(!subtractFromNinety ? ARCTAN_ONE_HALF : (90 - ARCTAN_ONE_HALF));
 	}
 	bool init() {
 		if (!GJRotationControl::init()) return false;	
@@ -53,7 +68,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		const std::string& determinedSpriteFrameName = Loader::get()->isModLoaded("hjfod.betteredit") ? "hjfod.betteredit/button-empty.png" : "geode.loader/black-square.png";
 
 		ButtonSprite* buttonSpriteCCW = ButtonSprite::create(fmt::format("-{}", determinedSpriteText).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .8f);
-        buttonSpriteCCW->setScale(.65f);
+		buttonSpriteCCW->setScale(.65f);
 		buttonSpriteCCW->setID("26-point-56505118-counterclockwise-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonCCW = CCMenuItemSpriteExtra::create(buttonSpriteCCW, this, menu_selector(MyGJRotationControl::onCCW26Point56505118));
 		buttonCCW->setTag(12102025);
@@ -61,14 +76,31 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		menu->addChild(buttonCCW);
 
 		ButtonSprite* buttonSpriteCW = ButtonSprite::create(fmt::format("+{}", determinedSpriteText).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .8f);
-        buttonSpriteCW->setScale(.65f);
+		buttonSpriteCW->setScale(.65f);
 		buttonSpriteCW->setID("26-point-56505118-clockwise-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonCW = CCMenuItemSpriteExtra::create(buttonSpriteCW, this, menu_selector(MyGJRotationControl::onCW26Point56505118));
 		buttonCW->setTag(12102025);
 		buttonCW->setID("26-point-56505118-clockwise"_spr);
 		menu->addChild(buttonCW);
 
-		menu->setLayout(RowLayout::create());
+		ButtonSprite* buttonSpriteRSU = ButtonSprite::create(fmt::format("{}", determinedSpriteText).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .8f);
+		buttonSpriteRSU->setScale(.65f);
+		buttonSpriteRSU->setID("26-point-56505118-right-side-up-sprite"_spr);
+		CCMenuItemSpriteExtra* buttonRSU = CCMenuItemSpriteExtra::create(buttonSpriteRSU, this, menu_selector(MyGJRotationControl::on26Point56505118));
+		buttonRSU->setTag(20260114);
+		buttonRSU->setID("26-point-56505118-right-side-up"_spr);
+		menu->addChild(buttonRSU);
+
+		ButtonSprite* buttonSpriteTTR = ButtonSprite::create(fmt::format("90 - {}", determinedSpriteText).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .8f);
+		buttonSpriteTTR->setScale(.65f);
+		buttonSpriteTTR->setID("26-point-56505118-to-the-right-sprite"_spr);
+		CCMenuItemSpriteExtra* buttonTTR = CCMenuItemSpriteExtra::create(buttonSpriteTTR, this, menu_selector(MyGJRotationControl::onNinetyMinus26Point56505118));
+		buttonTTR->setTag(20260114);
+		buttonTTR->setID("26-point-56505118-to-the-right"_spr);
+		menu->addChild(buttonTTR);
+
+		menu->setContentWidth(buttonCCW->getContentWidth() + buttonCW->getContentWidth());
+		menu->setLayout(RowLayout::create()->setAutoScale(true)->setCrossAxisOverflow(true));
 		this->addChild(menu);
 
 		return true;
