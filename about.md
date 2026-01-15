@@ -7,4 +7,6 @@ To find the buttons, open the "Free Rotate" menu while objects are selected.
 
 Reuses some code from HJfod's BetterEdit mod for compatibility with the vanilla free rotation slider and the vanilla editor's undo/redo system.
 
+Mod idea by [TheGarbageMann](https://www.youtube.com/channel/UC5l-nANqbiRVxMVbZ2okngw).
+
 This [Geode mod](https://geode-sdk.org) is licensed under LGPLv2. To report bugs or get help with using my mods, press the Discord button in the lower left corner.
