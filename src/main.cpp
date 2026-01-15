@@ -95,17 +95,9 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		menu->setPosition(0.f, 80.f);
 		menu->setAnchorPoint({.5, .0});
 
-		const bool highPrecisionRotation = Loader::get()->isModLoaded("kxtbit.high_precision_editor") && Loader::get()->getLoadedMod("kxtbit.high_precision_editor")->getSettingValue<bool>("full-precision-object-rotation");
-		const std::string& twentySix = highPrecisionRotation ? "26.56505118" : "26.57";
-		const std::string& sixtyThree = highPrecisionRotation ? "63.43494882" : "63.43";
-		const std::string& oneHundredFiftyThree = highPrecisionRotation ? "153.4349488" : "153.4";
-		const std::string& oneHundredSixteen = highPrecisionRotation ? "116.5650512" : "116.6";
-		const std::string& negativeTwoHundredSix = highPrecisionRotation ? "-206.5650512" : "-206.5";
-		const std::string& negativeTwoHundredFourtyThree = highPrecisionRotation ? "-243.4349488" : "-243.4";
-
 		const std::string& determinedSpriteFrameName = Loader::get()->isModLoaded("hjfod.betteredit") ? "hjfod.betteredit/button-empty.png" : "geode.loader/black-square.png";
 
-		ButtonSprite* buttonSpriteCCW = ButtonSprite::create(fmt::format("-={}", twentySix).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .8f);
+		ButtonSprite* buttonSpriteCCW = ButtonSprite::create("-=26.56505118", "bigFont.fnt", determinedSpriteFrameName.c_str(), .8f);
 		buttonSpriteCCW->setScale(.65f);
 		buttonSpriteCCW->setID("26-point-56505118-counterclockwise-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonCCW = CCMenuItemSpriteExtra::create(buttonSpriteCCW, this, menu_selector(MyGJRotationControl::onCCWTwentySix));
@@ -113,7 +105,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonCCW->setID("26-point-56505118-counterclockwise"_spr);
 		menu->addChild(buttonCCW);
 
-		ButtonSprite* buttonSpriteCW = ButtonSprite::create(fmt::format("+={}", twentySix).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .8f);
+		ButtonSprite* buttonSpriteCW = ButtonSprite::create("+=26.56505118", "bigFont.fnt", determinedSpriteFrameName.c_str(), .8f);
 		buttonSpriteCW->setScale(.65f);
 		buttonSpriteCW->setID("26-point-56505118-clockwise-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonCW = CCMenuItemSpriteExtra::create(buttonSpriteCW, this, menu_selector(MyGJRotationControl::onCWTwentySix));
@@ -234,7 +226,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonOneHundredSixteen->setID("26-point-56505118-one-hundred-sixteen"_spr);
 		menu->addChild(buttonOneHundredSixteen);
 
-		menu->setContentWidth(highPrecisionRotation ? 265.f : 145.f);
+		menu->setContentWidth(265.f);
 		menu->setLayout(RowLayout::create()->setAutoScale(true)->setCrossAxisOverflow(true)->setGrowCrossAxis(true));
 		this->addChild(menu);
 
