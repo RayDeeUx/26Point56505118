@@ -195,7 +195,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		CCSprite* oneHundredFiftyThreeSlope = GameObject::createWithKey(1744);
 		oneHundredFiftyThreeSlope->setRotation(180.f);
 		CCSprite* oneHundredFiftyThreeDashOrb = GameObject::createWithKey(1704);
-		oneHundredFiftyThreeDashOrb->setRotation(ARCTAN_ONE_HALF);
+		oneHundredFiftyThreeDashOrb->setRotation(-ARCTAN_ONE_HALF);
 		oneHundredFiftyThreeSlope->addChildAtPosition(oneHundredFiftyThreeDashOrb, Anchor::Center);
 		ButtonSprite* buttonSpriteOneHundredFiftyThree = ButtonSprite::create(oneHundredFiftyThreeSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("+{}", oneHundredFiftyThree).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteOneHundredFiftyThree->updateBGImage(determinedSpriteFrameName.c_str());
@@ -209,7 +209,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		CCSprite* negativeOneHundredSixteenSlope = GameObject::createWithKey(1744);
 		negativeOneHundredSixteenSlope->setRotation(-90.f);
 		CCSprite* negativeOneHundredSixteenDashOrb = GameObject::createWithKey(1704);
-		negativeOneHundredSixteenDashOrb->setRotation(ARCTAN_ONE_HALF);
+		negativeOneHundredSixteenDashOrb->setRotation(-ARCTAN_ONE_HALF);
 		negativeOneHundredSixteenSlope->addChildAtPosition(negativeOneHundredSixteenDashOrb, Anchor::Center);
 		ButtonSprite* buttonSpriteNegativeOneHundredSixteen = ButtonSprite::create(negativeOneHundredSixteenSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("-{}", oneHundredSixteen).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteNegativeOneHundredSixteen->updateBGImage(determinedSpriteFrameName.c_str());
