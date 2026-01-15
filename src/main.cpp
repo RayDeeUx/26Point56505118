@@ -206,7 +206,13 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonOneHundredFiftyThree->setID("26-point-56505118-one-hundred-fifty-three"_spr);
 		menu->addChild(buttonOneHundredFiftyThree);
 
-		ButtonSprite* buttonSpriteNegativeOneHundredSixteen = ButtonSprite::create(fmt::format("-{}", oneHundredSixteen).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		CCSprite* negativeOneHundredSixteenSlope = GameObject::createWithKey(1744);
+		negativeOneHundredSixteenSlope->setRotation(-90.f);
+		CCSprite* negativeOneHundredSixteenDashOrb = GameObject::createWithKey(1704);
+		negativeOneHundredSixteenDashOrb->setRotation(-90 - ARCTAN_ONE_HALF);
+		negativeOneHundredSixteenSlope->addChild(negativeOneHundredSixteenDashOrb);
+		ButtonSprite* buttonSpriteNegativeOneHundredSixteen = ButtonSprite::create(negativeOneHundredSixteenSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("-{}", oneHundredSixteen).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		buttonSpriteNegativeOneHundredSixteen->updateBGImage(determinedSpriteFrameName.c_str());
 		buttonSpriteNegativeOneHundredSixteen->setScale(.65f);
 		buttonSpriteNegativeOneHundredSixteen->setID("26-point-56505118-negative-one-hundred-sixteen-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonNegativeOneHundredSixteen = CCMenuItemSpriteExtra::create(buttonSpriteNegativeOneHundredSixteen, this, menu_selector(MyGJRotationControl::onNegativeOneHundredSixteen));
@@ -214,7 +220,14 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonNegativeOneHundredSixteen->setID("26-point-56505118-negative-one-hundred-sixteen"_spr);
 		menu->addChild(buttonNegativeOneHundredSixteen);
 
-		ButtonSprite* buttonSpriteOneHundredSixteen = ButtonSprite::create(fmt::format("+{}", oneHundredSixteen).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		CCSprite* oneHundredSixteenSlope = GameObject::createWithKey(1744);
+		oneHundredSixteenSlope->setRotation(-90.f);
+		oneHundredSixteenSlope->setFlipY(true);
+		CCSprite* oneHundredSixteenDashOrb = GameObject::createWithKey(1704);
+		oneHundredSixteenDashOrb->setRotation(90 + ARCTAN_ONE_HALF);
+		oneHundredSixteenSlope->addChild(oneHundredSixteenDashOrb);
+		ButtonSprite* buttonSpriteOneHundredSixteen = ButtonSprite::create(oneHundredSixteenSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("+{}", oneHundredSixteen).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		oneHundredSixteenSlope->updateBGImage(determinedSpriteFrameName.c_str());
 		buttonSpriteOneHundredSixteen->setScale(.65f);
 		buttonSpriteOneHundredSixteen->setID("26-point-56505118-one-hundred-sixteen-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonOneHundredSixteen = CCMenuItemSpriteExtra::create(buttonSpriteOneHundredSixteen, this, menu_selector(MyGJRotationControl::onOneHundredSixteen));
