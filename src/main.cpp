@@ -113,7 +113,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonCW->setID("26-point-56505118-clockwise"_spr);
 		menu->addChild(buttonCW);
 
-		CCSprite* negativeTwentySixSlope = GameObject::createWithKey(1744);
+		CCSprite* negativeTwentySixSlope = GameObject::createWithKey(674);
 		CCSprite* negativeTwentySixDashOrb = GameObject::createWithKey(1704);
 		negativeTwentySixDashOrb->setRotation(-ARCTAN_ONE_HALF);
 		negativeTwentySixSlope->addChildAtPosition(negativeTwentySixDashOrb, Anchor::Center);
@@ -126,7 +126,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonNegativeTwentySix->setID("26-point-56505118-negative-twenty-six"_spr);
 		menu->addChild(buttonNegativeTwentySix);
 
-		CCSprite* twentySixSlope = GameObject::createWithKey(1744);
+		CCSprite* twentySixSlope = GameObject::createWithKey(674);
 		twentySixSlope->setRotation(180.f);
 		twentySixSlope->setFlipX(true);
 		CCSprite* twentySixDashOrb = GameObject::createWithKey(1704);
@@ -141,7 +141,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonTwentySix->setID("26-point-56505118-twenty-six"_spr);
 		menu->addChild(buttonTwentySix);
 
-		CCSprite* negativeSixtyThreeSlope = GameObject::createWithKey(1744);
+		CCSprite* negativeSixtyThreeSlope = GameObject::createWithKey(674);
 		negativeSixtyThreeSlope->setRotation(-90.f);
 		negativeSixtyThreeSlope->setFlipY(true);
 		CCSprite* negativeSixtyThreeDashOrb = GameObject::createWithKey(1704);
@@ -156,7 +156,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonNegativeSixtyThree->setID("26-point-56505118-negative-sixty-three"_spr);
 		menu->addChild(buttonNegativeSixtyThree);
 
-		CCSprite* sixtyThreeSlope = GameObject::createWithKey(1744);
+		CCSprite* sixtyThreeSlope = GameObject::createWithKey(674);
 		sixtyThreeSlope->setRotation(90.f);
 		CCSprite* sixtyThreeDashOrb = GameObject::createWithKey(1704);
 		sixtyThreeDashOrb->setRotation(180 - ((-1.f * (90 - ARCTAN_ONE_HALF)) + negativeSixtyThreeSlope->getRotation()));
@@ -170,7 +170,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonSixtyThree->setID("26-point-56505118-sixty-three"_spr);
 		menu->addChild(buttonSixtyThree);
 
-		CCSprite* negativeOneHundredFiftyThreeSlope = GameObject::createWithKey(1744);
+		CCSprite* negativeOneHundredFiftyThreeSlope = GameObject::createWithKey(674);
 		negativeOneHundredFiftyThreeSlope->setFlipX(true);
 		CCSprite* negativeOneHundredFiftyThreeDashOrb = GameObject::createWithKey(1704);
 		negativeOneHundredFiftyThreeDashOrb->setRotation(-1.f * (180 - ARCTAN_ONE_HALF));
@@ -184,7 +184,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonNegativeOneHundredFiftyThree->setID("26-point-56505118-negative-one-hundred-fifty-three"_spr);
 		menu->addChild(buttonNegativeOneHundredFiftyThree);
 
-		CCSprite* oneHundredFiftyThreeSlope = GameObject::createWithKey(1744);
+		CCSprite* oneHundredFiftyThreeSlope = GameObject::createWithKey(674);
 		oneHundredFiftyThreeSlope->setRotation(180.f);
 		CCSprite* oneHundredFiftyThreeDashOrb = GameObject::createWithKey(1704);
 		oneHundredFiftyThreeDashOrb->setRotation(-ARCTAN_ONE_HALF);
@@ -198,7 +198,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonOneHundredFiftyThree->setID("26-point-56505118-one-hundred-fifty-three"_spr);
 		menu->addChild(buttonOneHundredFiftyThree);
 
-		CCSprite* negativeOneHundredSixteenSlope = GameObject::createWithKey(1744);
+		CCSprite* negativeOneHundredSixteenSlope = GameObject::createWithKey(674);
 		negativeOneHundredSixteenSlope->setRotation(-90.f);
 		CCSprite* negativeOneHundredSixteenDashOrb = GameObject::createWithKey(1704);
 		negativeOneHundredSixteenDashOrb->setRotation(-ARCTAN_ONE_HALF);
@@ -212,7 +212,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonNegativeOneHundredSixteen->setID("26-point-56505118-negative-one-hundred-sixteen"_spr);
 		menu->addChild(buttonNegativeOneHundredSixteen);
 
-		CCSprite* oneHundredSixteenSlope = GameObject::createWithKey(1744);
+		CCSprite* oneHundredSixteenSlope = GameObject::createWithKey(674);
 		oneHundredSixteenSlope->setRotation(-90.f);
 		CCSprite* oneHundredSixteenDashOrb = GameObject::createWithKey(1704);
 		oneHundredSixteenSlope->addChildAtPosition(oneHundredSixteenDashOrb, Anchor::Center);
