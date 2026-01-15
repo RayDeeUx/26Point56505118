@@ -121,7 +121,12 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonCW->setID("26-point-56505118-clockwise"_spr);
 		menu->addChild(buttonCW);
 
-		ButtonSprite* buttonSpriteNegativeTwentySix = ButtonSprite::create(fmt::format("-{}", twentySix).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		CCSprite* negativeTwentySixSlope = GameObject::createWithKey(1744);
+		CCSprite* negativeTwentySixDashOrb = GameObject::createWithKey(1704);
+		negativeTwentySixDashOrb->setRotation(-ARCTAN_ONE_HALF);
+		negativeTwentySixSlope->addChild(negativeTwentySixDashOrb);
+		ButtonSprite* buttonSpriteNegativeTwentySix = ButtonSprite::create(negativeTwentySixSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("-{}", twentySix).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		buttonSpriteNegativeTwentySix->updateBGImage(determinedSpriteFrameName.c_str());
 		buttonSpriteNegativeTwentySix->setScale(.65f);
 		buttonSpriteNegativeTwentySix->setID("26-point-56505118-negative-twenty-six-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonNegativeTwentySix = CCMenuItemSpriteExtra::create(buttonSpriteNegativeTwentySix, this, menu_selector(MyGJRotationControl::onNegativeTwentySix));
@@ -129,7 +134,13 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonNegativeTwentySix->setID("26-point-56505118-negative-twenty-six"_spr);
 		menu->addChild(buttonNegativeTwentySix);
 
-		ButtonSprite* buttonSpriteTwentySix = ButtonSprite::create(fmt::format("+{}", twentySix).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		CCSprite* twentySixSlope = GameObject::createWithKey(1744);
+		twentySixSlope->setFlipX(true);
+		CCSprite* twentySixDashOrb = GameObject::createWithKey(1704);
+		twentySixDashOrb->setRotation(ARCTAN_ONE_HALF);
+		twentySixSlope->addChild(twentySixDashOrb);
+		ButtonSprite* buttonSpriteTwentySix = ButtonSprite::create(twentySixSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("+{}", twentySix).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		buttonSpriteTwentySix->updateBGImage(determinedSpriteFrameName.c_str());
 		buttonSpriteTwentySix->setScale(.65f);
 		buttonSpriteTwentySix->setID("26-point-56505118-twenty-six-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonTwentySix = CCMenuItemSpriteExtra::create(buttonSpriteTwentySix, this, menu_selector(MyGJRotationControl::onTwentySix));
@@ -137,7 +148,14 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonTwentySix->setID("26-point-56505118-twenty-six"_spr);
 		menu->addChild(buttonTwentySix);
 
-		ButtonSprite* buttonSpriteNegativeSixtyThree = ButtonSprite::create(fmt::format("-{}", sixtyThree).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		CCSprite* negativeSixtyThreeSlope = GameObject::createWithKey(1744);
+		negativeSixtyThreeSlope->setRotation(-90.f);
+		negativeSixtyThreeSlope->setFlipX(true);
+		CCSprite* negativeSixtyThreeDashOrb = GameObject::createWithKey(1704);
+		negativeSixtyThreeDashOrb->setRotation(-1.f * (90 - ARCTAN_ONE_HALF));
+		negativeSixtyThreeSlope->addChild(negativeSixtyThreeDashOrb);
+		ButtonSprite* buttonSpriteNegativeSixtyThree = ButtonSprite::create(negativeSixtyThreeSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("-{}", sixtyThree).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		buttonSpriteNegativeSixtyThree->updateBGImage(determinedSpriteFrameName.c_str());
 		buttonSpriteNegativeSixtyThree->setScale(.65f);
 		buttonSpriteNegativeSixtyThree->setID("26-point-56505118-negative-sixty-three-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonNegativeSixtyThree = CCMenuItemSpriteExtra::create(buttonSpriteNegativeSixtyThree, this, menu_selector(MyGJRotationControl::onNegativeSixtyThree));
@@ -145,7 +163,13 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonNegativeSixtyThree->setID("26-point-56505118-negative-sixty-three"_spr);
 		menu->addChild(buttonNegativeSixtyThree);
 
-		ButtonSprite* buttonSpriteSixtyThree = ButtonSprite::create(fmt::format("+{}", sixtyThree).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		CCSprite* sixtyThreeSlope = GameObject::createWithKey(1744);
+		sixtyThreeSlope->setRotation(-90.f);
+		CCSprite* sixtyThreeDashOrb = GameObject::createWithKey(1704);
+		sixtyThreeDashOrb->setRotation(90 - ARCTAN_ONE_HALF);
+		sixtyThreeSlope->addChild(sixtyThreeDashOrb);
+		ButtonSprite* buttonSpriteSixtyThree = ButtonSprite::create(sixtyThreeSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("+{}", sixtyThree).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		buttonSpriteSixtyThree->updateBGImage(determinedSpriteFrameName.c_str());
 		buttonSpriteSixtyThree->setScale(.65f);
 		buttonSpriteSixtyThree->setID("26-point-56505118-sixty-three-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonSixtyThree = CCMenuItemSpriteExtra::create(buttonSpriteSixtyThree, this, menu_selector(MyGJRotationControl::onSixtyThree));
@@ -153,7 +177,14 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonSixtyThree->setID("26-point-56505118-sixty-three"_spr);
 		menu->addChild(buttonSixtyThree);
 
-		ButtonSprite* buttonSpriteNegativeOneHundredFiftyThree = ButtonSprite::create(fmt::format("-{}", oneHundredFiftyThree).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		CCSprite* negativeOneHundredFiftyThreeSlope = GameObject::createWithKey(1744);
+		negativeOneHundredFiftyThreeSlope->setRotation(180.f);
+		negativeOneHundredFiftyThreeSlope->setFlipX(true);
+		CCSprite* negativeOneHundredFiftyThreeDashOrb = GameObject::createWithKey(1704);
+		negativeOneHundredFiftyThreeDashOrb->setRotation(-1.f * (180 - ARCTAN_ONE_HALF));
+		negativeOneHundredFiftyThreeSlope->addChild(negativeOneHundredFiftyThreeDashOrb);
+		ButtonSprite* buttonSpriteNegativeOneHundredFiftyThree = ButtonSprite::create(negativeOneHundredFiftyThreeSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("-{}", oneHundredFiftyThree).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		buttonSpriteNegativeOneHundredFiftyThree->updateBGImage(determinedSpriteFrameName.c_str());
 		buttonSpriteNegativeOneHundredFiftyThree->setScale(.65f);
 		buttonSpriteNegativeOneHundredFiftyThree->setID("26-point-56505118-negative-one-hundred-fifty-three-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonNegativeOneHundredFiftyThree = CCMenuItemSpriteExtra::create(buttonSpriteNegativeOneHundredFiftyThree, this, menu_selector(MyGJRotationControl::onNegativeOneHundredFiftyThree));
@@ -161,7 +192,14 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonNegativeOneHundredFiftyThree->setID("26-point-56505118-negative-one-hundred-fifty-three"_spr);
 		menu->addChild(buttonNegativeOneHundredFiftyThree);
 
-		ButtonSprite* buttonSpriteOneHundredFiftyThree = ButtonSprite::create(fmt::format("+{}", oneHundredFiftyThree).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		CCSprite* oneHundredFiftyThreeSlope = GameObject::createWithKey(1744);
+		oneHundredFiftyThreeSlope->setRotation(180.f);
+		CCSprite* oneHundredFiftyThreeDashOrb = GameObject::createWithKey(1704);
+		oneHundredFiftyThreeDashOrb->setScale(.5f);
+		oneHundredFiftyThreeDashOrb->setRotation(180 - ARCTAN_ONE_HALF);
+		oneHundredFiftyThreeSlope->addChild(oneHundredFiftyThreeDashOrb);
+		ButtonSprite* buttonSpriteOneHundredFiftyThree = ButtonSprite::create(oneHundredFiftyThreeSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("+{}", oneHundredFiftyThree).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
+		buttonSpriteOneHundredFiftyThree->updateBGImage(determinedSpriteFrameName.c_str());
 		buttonSpriteOneHundredFiftyThree->setScale(.65f);
 		buttonSpriteOneHundredFiftyThree->setID("26-point-56505118-one-hundred-fifty-three-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonOneHundredFiftyThree = CCMenuItemSpriteExtra::create(buttonSpriteOneHundredFiftyThree, this, menu_selector(MyGJRotationControl::onOneHundredFiftyThree));
