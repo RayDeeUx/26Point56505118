@@ -227,7 +227,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		oneHundredSixteenDashOrb->setRotation(90 + ARCTAN_ONE_HALF);
 		oneHundredSixteenSlope->addChild(oneHundredSixteenDashOrb);
 		ButtonSprite* buttonSpriteOneHundredSixteen = ButtonSprite::create(oneHundredSixteenSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("+{}", oneHundredSixteen).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
-		oneHundredSixteenSlope->updateBGImage(determinedSpriteFrameName.c_str());
+		buttonSpriteOneHundredSixteen->updateBGImage(determinedSpriteFrameName.c_str());
 		buttonSpriteOneHundredSixteen->setScale(.65f);
 		buttonSpriteOneHundredSixteen->setID("26-point-56505118-one-hundred-sixteen-sprite"_spr);
 		CCMenuItemSpriteExtra* buttonOneHundredSixteen = CCMenuItemSpriteExtra::create(buttonSpriteOneHundredSixteen, this, menu_selector(MyGJRotationControl::onOneHundredSixteen));
