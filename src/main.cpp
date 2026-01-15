@@ -124,7 +124,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		CCSprite* negativeTwentySixSlope = GameObject::createWithKey(1744);
 		CCSprite* negativeTwentySixDashOrb = GameObject::createWithKey(1704);
 		negativeTwentySixDashOrb->setRotation(-ARCTAN_ONE_HALF);
-		negativeTwentySixSlope->addChild(negativeTwentySixDashOrb);
+		negativeTwentySixSlope->addChildAtPosition(negativeTwentySixDashOrb, Anchor::Center);
 		ButtonSprite* buttonSpriteNegativeTwentySix = ButtonSprite::create(negativeTwentySixSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("-{}", twentySix).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteNegativeTwentySix->updateBGImage(determinedSpriteFrameName.c_str());
 		buttonSpriteNegativeTwentySix->setScale(.65f);
@@ -139,7 +139,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		twentySixSlope->setFlipX(true);
 		CCSprite* twentySixDashOrb = GameObject::createWithKey(1704);
 		twentySixDashOrb->setRotation(ARCTAN_ONE_HALF);
-		twentySixSlope->addChild(twentySixDashOrb);
+		twentySixSlope->addChildAtPosition(twentySixDashOrb, Anchor::Center);
 		ButtonSprite* buttonSpriteTwentySix = ButtonSprite::create(twentySixSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("+{}", twentySix).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteTwentySix->updateBGImage(determinedSpriteFrameName.c_str());
 		buttonSpriteTwentySix->setScale(.65f);
@@ -154,7 +154,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		negativeSixtyThreeSlope->setFlipX(true);
 		CCSprite* negativeSixtyThreeDashOrb = GameObject::createWithKey(1704);
 		negativeSixtyThreeDashOrb->setRotation(-1.f * (90 - ARCTAN_ONE_HALF));
-		negativeSixtyThreeSlope->addChild(negativeSixtyThreeDashOrb);
+		negativeSixtyThreeSlope->addChildAtPosition(negativeSixtyThreeDashOrb, Anchor::Center);
 		ButtonSprite* buttonSpriteNegativeSixtyThree = ButtonSprite::create(negativeSixtyThreeSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("-{}", sixtyThree).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteNegativeSixtyThree->updateBGImage(determinedSpriteFrameName.c_str());
 		buttonSpriteNegativeSixtyThree->setScale(.65f);
@@ -168,7 +168,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		sixtyThreeSlope->setRotation(90.f);
 		CCSprite* sixtyThreeDashOrb = GameObject::createWithKey(1704);
 		sixtyThreeDashOrb->setRotation(90 - ARCTAN_ONE_HALF);
-		sixtyThreeSlope->addChild(sixtyThreeDashOrb);
+		sixtyThreeSlope->addChildAtPosition(sixtyThreeDashOrb, Anchor::Center);
 		ButtonSprite* buttonSpriteSixtyThree = ButtonSprite::create(sixtyThreeSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("+{}", sixtyThree).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteSixtyThree->updateBGImage(determinedSpriteFrameName.c_str());
 		buttonSpriteSixtyThree->setScale(.65f);
@@ -182,7 +182,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		negativeOneHundredFiftyThreeSlope->setFlipX(true);
 		CCSprite* negativeOneHundredFiftyThreeDashOrb = GameObject::createWithKey(1704);
 		negativeOneHundredFiftyThreeDashOrb->setRotation(-1.f * (180 - ARCTAN_ONE_HALF));
-		negativeOneHundredFiftyThreeSlope->addChild(negativeOneHundredFiftyThreeDashOrb);
+		negativeOneHundredFiftyThreeSlope->addChildAtPosition(negativeOneHundredFiftyThreeDashOrb, Anchor::Center);
 		ButtonSprite* buttonSpriteNegativeOneHundredFiftyThree = ButtonSprite::create(negativeOneHundredFiftyThreeSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("-{}", oneHundredFiftyThree).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteNegativeOneHundredFiftyThree->updateBGImage(determinedSpriteFrameName.c_str());
 		buttonSpriteNegativeOneHundredFiftyThree->setScale(.65f);
@@ -196,7 +196,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		oneHundredFiftyThreeSlope->setRotation(180.f);
 		CCSprite* oneHundredFiftyThreeDashOrb = GameObject::createWithKey(1704);
 		oneHundredFiftyThreeDashOrb->setRotation(180 - ARCTAN_ONE_HALF);
-		oneHundredFiftyThreeSlope->addChild(oneHundredFiftyThreeDashOrb);
+		oneHundredFiftyThreeSlope->addChildAtPosition(oneHundredFiftyThreeDashOrb, Anchor::Center);
 		ButtonSprite* buttonSpriteOneHundredFiftyThree = ButtonSprite::create(oneHundredFiftyThreeSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("+{}", oneHundredFiftyThree).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteOneHundredFiftyThree->updateBGImage(determinedSpriteFrameName.c_str());
 		buttonSpriteOneHundredFiftyThree->setScale(.65f);
@@ -210,7 +210,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		negativeOneHundredSixteenSlope->setRotation(-90.f);
 		CCSprite* negativeOneHundredSixteenDashOrb = GameObject::createWithKey(1704);
 		negativeOneHundredSixteenDashOrb->setRotation(-90 - ARCTAN_ONE_HALF);
-		negativeOneHundredSixteenSlope->addChild(negativeOneHundredSixteenDashOrb);
+		negativeOneHundredSixteenSlope->addChildAtPosition(negativeOneHundredSixteenDashOrb, Anchor::Center);
 		ButtonSprite* buttonSpriteNegativeOneHundredSixteen = ButtonSprite::create(negativeOneHundredSixteenSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("-{}", oneHundredSixteen).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteNegativeOneHundredSixteen->updateBGImage(determinedSpriteFrameName.c_str());
 		buttonSpriteNegativeOneHundredSixteen->setScale(.65f);
@@ -225,7 +225,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		oneHundredSixteenSlope->setFlipY(true);
 		CCSprite* oneHundredSixteenDashOrb = GameObject::createWithKey(1704);
 		oneHundredSixteenDashOrb->setRotation(90 + ARCTAN_ONE_HALF);
-		oneHundredSixteenSlope->addChild(oneHundredSixteenDashOrb);
+		oneHundredSixteenSlope->addChildAtPosition(oneHundredSixteenDashOrb, Anchor::Center);
 		ButtonSprite* buttonSpriteOneHundredSixteen = ButtonSprite::create(oneHundredSixteenSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("+{}", oneHundredSixteen).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteOneHundredSixteen->updateBGImage(determinedSpriteFrameName.c_str());
 		buttonSpriteOneHundredSixteen->setScale(.65f);
