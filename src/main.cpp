@@ -168,6 +168,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		sixtyThreeSlope->setRotation(90.f);
 		CCSprite* sixtyThreeDashOrb = GameObject::createWithKey(1704);
 		sixtyThreeDashOrb->setRotation(ARCTAN_ONE_HALF);
+		sixtyThreeDashOrb->setFlipX(true);
 		sixtyThreeSlope->addChildAtPosition(sixtyThreeDashOrb, Anchor::Center);
 		ButtonSprite* buttonSpriteSixtyThree = ButtonSprite::create(sixtyThreeSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("+{}", sixtyThree).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteSixtyThree->updateBGImage(determinedSpriteFrameName.c_str());
@@ -196,6 +197,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		oneHundredFiftyThreeSlope->setRotation(180.f);
 		CCSprite* oneHundredFiftyThreeDashOrb = GameObject::createWithKey(1704);
 		oneHundredFiftyThreeDashOrb->setRotation(ARCTAN_ONE_HALF);
+		oneHundredFiftyThreeDashOrb->setFlipY(true);
 		oneHundredFiftyThreeSlope->addChildAtPosition(oneHundredFiftyThreeDashOrb, Anchor::Center);
 		ButtonSprite* buttonSpriteOneHundredFiftyThree = ButtonSprite::create(oneHundredFiftyThreeSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("+{}", oneHundredFiftyThree).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteOneHundredFiftyThree->updateBGImage(determinedSpriteFrameName.c_str());
@@ -210,6 +212,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		negativeOneHundredSixteenSlope->setRotation(-90.f);
 		CCSprite* negativeOneHundredSixteenDashOrb = GameObject::createWithKey(1704);
 		negativeOneHundredSixteenDashOrb->setRotation(ARCTAN_ONE_HALF);
+		negativeOneHundredSixteenDashOrb->setFlipX(true);
 		negativeOneHundredSixteenSlope->addChildAtPosition(negativeOneHundredSixteenDashOrb, Anchor::Center);
 		ButtonSprite* buttonSpriteNegativeOneHundredSixteen = ButtonSprite::create(negativeOneHundredSixteenSlope, 30, 30, 30.f, 1.f, false); // ButtonSprite::create(fmt::format("-{}", oneHundredSixteen).c_str(), "bigFont.fnt", determinedSpriteFrameName.c_str(), .7f);
 		buttonSpriteNegativeOneHundredSixteen->updateBGImage(determinedSpriteFrameName.c_str());
