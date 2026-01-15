@@ -235,7 +235,7 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		buttonOneHundredSixteen->setID("26-point-56505118-one-hundred-sixteen"_spr);
 		menu->addChild(buttonOneHundredSixteen);
 
-		menu->setContentWidth(buttonCCW->getContentWidth() + buttonCW->getContentWidth());
+		menu->setContentWidth(265.f);
 		menu->setLayout(RowLayout::create()->setAutoScale(true)->setCrossAxisOverflow(true)->setGrowCrossAxis(true));
 		this->addChild(menu);
 
