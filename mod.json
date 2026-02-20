@@ -1,14 +1,14 @@
 {
-	"geode": "4.10.0",
+	"geode": "5.0.0-beta.3",
 	"gd": {
-		"win": "2.2074",
-		"mac": "2.2074",
-		"ios": "2.2074",
-		"android": "2.2074"
+		"win": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081",
+		"android": "2.2081"
 	},
 	"id": "raydeeux.26point56505118",
 	"name": "26Point56505118",
-	"version": "v1.0.1",
+	"version": "v1.0.2",
 	"developer": "RayDeeUx",
 	"description": "Rotate objects by 26.56505118 degrees!",
 	"repository": "https://github.com/RayDeeUx/26Point56505118",
@@ -21,7 +21,7 @@
 		},
 		"alternationDuration": {
 			"name": "Duration Before Switching Rotation Visual2 Guides",
-			"description": "The amount of time spent before switching between the dash orb and gravity portal as visual guides for the rotation buttons.",
+			"description": "The amount of time spent before switching between the dash orb and gravity portal as visual guides for the rotation buttons.\n\n<cy>If changing this setting while inside the editor, you will need to restart the editor for your changes to apply.</c>",
 			"type": "float",
 			"default": 1.0,
 			"min": 1.0,
