@@ -89,6 +89,8 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 	bool init() {
 		if (!GJRotationControl::init()) return false;
 
+		const float alternationDuration = std::clamp<float>(Mod::get()->getSettingValue<float>("alternationDuration"), 1.f, 30.f);
+
 		CCMenu* menu = CCMenu::create();
 		menu->setScale(.6f);
 		menu->setID("26-point-56505118-menu"_spr);
@@ -116,12 +118,12 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		CCSprite* negativeTwentySixSlope = GameObject::createWithKey(674);
 		CCSprite* negativeTwentySixDashOrb = GameObject::createWithKey(1704);
 		negativeTwentySixDashOrb->setRotation(-ARCTAN_ONE_HALF);
-		negativeTwentySixDashOrb->runAction(CCRepeatForever::create(CCSequence::create(CCFadeOut::create(0.f), CCDelayTime::create(1.f), CCFadeIn::create(0.f), CCDelayTime::create(1.f), nullptr)));
+		negativeTwentySixDashOrb->runAction(CCRepeatForever::create(CCSequence::create(CCFadeOut::create(0.f), CCDelayTime::create(alternationDuration), CCFadeIn::create(0.f), CCDelayTime::create(alternationDuration), nullptr)));
 		CCSprite* negativeTwentySixYellowGravityPortal = GameObject::createWithKey(11);
 		negativeTwentySixYellowGravityPortal->setRotation(-ARCTAN_ONE_HALF);
 		negativeTwentySixYellowGravityPortal->setOpacity(0);
 		negativeTwentySixYellowGravityPortal->setScale(.85f);
-		negativeTwentySixYellowGravityPortal->runAction(CCRepeatForever::create(CCSequence::create(CCFadeIn::create(0.f), CCDelayTime::create(1.f), CCFadeOut::create(0.f), CCDelayTime::create(1.f), nullptr)));
+		negativeTwentySixYellowGravityPortal->runAction(CCRepeatForever::create(CCSequence::create(CCFadeIn::create(0.f), CCDelayTime::create(alternationDuration), CCFadeOut::create(0.f), CCDelayTime::create(alternationDuration), nullptr)));
 		negativeTwentySixSlope->addChildAtPosition(negativeTwentySixDashOrb, Anchor::Center);
 		negativeTwentySixSlope->addChildAtPosition(negativeTwentySixYellowGravityPortal, Anchor::Center);
 		negativeTwentySixSlope->setColor({255, 127, 0});
@@ -139,12 +141,12 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		twentySixSlope->setFlipX(true);
 		CCSprite* twentySixDashOrb = GameObject::createWithKey(1704);
 		twentySixDashOrb->setRotation(ARCTAN_ONE_HALF - twentySixSlope->getRotation());
-		twentySixDashOrb->runAction(CCRepeatForever::create(CCSequence::create(CCFadeOut::create(0.f), CCDelayTime::create(1.f), CCFadeIn::create(0.f), CCDelayTime::create(1.f), nullptr)));
+		twentySixDashOrb->runAction(CCRepeatForever::create(CCSequence::create(CCFadeOut::create(0.f), CCDelayTime::create(alternationDuration), CCFadeIn::create(0.f), CCDelayTime::create(alternationDuration), nullptr)));
 		CCSprite* twentySixYellowGravityPortal = GameObject::createWithKey(11);
 		twentySixYellowGravityPortal->setRotation(ARCTAN_ONE_HALF - twentySixSlope->getRotation());
 		twentySixYellowGravityPortal->setOpacity(0);
 		twentySixYellowGravityPortal->setScale(.85f);
-		twentySixYellowGravityPortal->runAction(CCRepeatForever::create(CCSequence::create(CCFadeIn::create(0.f), CCDelayTime::create(1.f), CCFadeOut::create(0.f), CCDelayTime::create(1.f), nullptr)));
+		twentySixYellowGravityPortal->runAction(CCRepeatForever::create(CCSequence::create(CCFadeIn::create(0.f), CCDelayTime::create(alternationDuration), CCFadeOut::create(0.f), CCDelayTime::create(alternationDuration), nullptr)));
 		twentySixSlope->addChildAtPosition(twentySixDashOrb, Anchor::Center);
 		twentySixSlope->addChildAtPosition(twentySixYellowGravityPortal, Anchor::Center);
 		twentySixSlope->setColor({255, 127, 0});
@@ -162,12 +164,12 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		negativeSixtyThreeSlope->setFlipY(true);
 		CCSprite* negativeSixtyThreeDashOrb = GameObject::createWithKey(1704);
 		negativeSixtyThreeDashOrb->setRotation(ARCTAN_ONE_HALF);
-		negativeSixtyThreeDashOrb->runAction(CCRepeatForever::create(CCSequence::create(CCFadeOut::create(0.f), CCDelayTime::create(1.f), CCFadeIn::create(0.f), CCDelayTime::create(1.f), nullptr)));
+		negativeSixtyThreeDashOrb->runAction(CCRepeatForever::create(CCSequence::create(CCFadeOut::create(0.f), CCDelayTime::create(alternationDuration), CCFadeIn::create(0.f), CCDelayTime::create(alternationDuration), nullptr)));
 		CCSprite* negativeSixtyThreeYellowGravityPortal = GameObject::createWithKey(11);
 		negativeSixtyThreeYellowGravityPortal->setRotation(ARCTAN_ONE_HALF);
 		negativeSixtyThreeYellowGravityPortal->setOpacity(0);
 		negativeSixtyThreeYellowGravityPortal->setScale(.85f);
-		negativeSixtyThreeYellowGravityPortal->runAction(CCRepeatForever::create(CCSequence::create(CCFadeIn::create(0.f), CCDelayTime::create(1.f), CCFadeOut::create(0.f), CCDelayTime::create(1.f), nullptr)));
+		negativeSixtyThreeYellowGravityPortal->runAction(CCRepeatForever::create(CCSequence::create(CCFadeIn::create(0.f), CCDelayTime::create(alternationDuration), CCFadeOut::create(0.f), CCDelayTime::create(alternationDuration), nullptr)));
 		negativeSixtyThreeSlope->addChildAtPosition(negativeSixtyThreeDashOrb, Anchor::Center);
 		negativeSixtyThreeSlope->addChildAtPosition(negativeSixtyThreeYellowGravityPortal, Anchor::Center);
 		negativeSixtyThreeSlope->setColor({255, 127, 0});
@@ -184,12 +186,12 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		sixtyThreeSlope->setRotation(90.f);
 		CCSprite* sixtyThreeDashOrb = GameObject::createWithKey(1704);
 		sixtyThreeDashOrb->setRotation(180 - ((-1.f * (90 - ARCTAN_ONE_HALF)) + negativeSixtyThreeSlope->getRotation()));
-		sixtyThreeDashOrb->runAction(CCRepeatForever::create(CCSequence::create(CCFadeOut::create(0.f), CCDelayTime::create(1.f), CCFadeIn::create(0.f), CCDelayTime::create(1.f), nullptr)));
+		sixtyThreeDashOrb->runAction(CCRepeatForever::create(CCSequence::create(CCFadeOut::create(0.f), CCDelayTime::create(alternationDuration), CCFadeIn::create(0.f), CCDelayTime::create(alternationDuration), nullptr)));
 		CCSprite* sixtyThreeYellowGravityPortal = GameObject::createWithKey(11);
 		sixtyThreeYellowGravityPortal->setRotation(180 - ((-1.f * (90 - ARCTAN_ONE_HALF)) + negativeSixtyThreeSlope->getRotation()));
 		sixtyThreeYellowGravityPortal->setOpacity(0);
 		sixtyThreeYellowGravityPortal->setScale(.85f);
-		sixtyThreeYellowGravityPortal->runAction(CCRepeatForever::create(CCSequence::create(CCFadeIn::create(0.f), CCDelayTime::create(1.f), CCFadeOut::create(0.f), CCDelayTime::create(1.f), nullptr)));
+		sixtyThreeYellowGravityPortal->runAction(CCRepeatForever::create(CCSequence::create(CCFadeIn::create(0.f), CCDelayTime::create(alternationDuration), CCFadeOut::create(0.f), CCDelayTime::create(alternationDuration), nullptr)));
 		sixtyThreeSlope->addChildAtPosition(sixtyThreeDashOrb, Anchor::Center);
 		sixtyThreeSlope->addChildAtPosition(sixtyThreeYellowGravityPortal, Anchor::Center);
 		sixtyThreeSlope->setColor({255, 127, 0});
@@ -206,12 +208,12 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		negativeOneHundredFiftyThreeSlope->setFlipX(true);
 		CCSprite* negativeOneHundredFiftyThreeDashOrb = GameObject::createWithKey(1704);
 		negativeOneHundredFiftyThreeDashOrb->setRotation(-1.f * (180 - ARCTAN_ONE_HALF));
-		negativeOneHundredFiftyThreeDashOrb->runAction(CCRepeatForever::create(CCSequence::create(CCFadeOut::create(0.f), CCDelayTime::create(1.f), CCFadeIn::create(0.f), CCDelayTime::create(1.f), nullptr)));
+		negativeOneHundredFiftyThreeDashOrb->runAction(CCRepeatForever::create(CCSequence::create(CCFadeOut::create(0.f), CCDelayTime::create(alternationDuration), CCFadeIn::create(0.f), CCDelayTime::create(alternationDuration), nullptr)));
 		CCSprite* negativeOneHundredFiftyThreeYellowGravityPortal = GameObject::createWithKey(11);
 		negativeOneHundredFiftyThreeYellowGravityPortal->setRotation(-1.f * (180 - ARCTAN_ONE_HALF));
 		negativeOneHundredFiftyThreeYellowGravityPortal->setOpacity(0);
 		negativeOneHundredFiftyThreeYellowGravityPortal->setScale(.85f);
-		negativeOneHundredFiftyThreeYellowGravityPortal->runAction(CCRepeatForever::create(CCSequence::create(CCFadeIn::create(0.f), CCDelayTime::create(1.f), CCFadeOut::create(0.f), CCDelayTime::create(1.f), nullptr)));
+		negativeOneHundredFiftyThreeYellowGravityPortal->runAction(CCRepeatForever::create(CCSequence::create(CCFadeIn::create(0.f), CCDelayTime::create(alternationDuration), CCFadeOut::create(0.f), CCDelayTime::create(alternationDuration), nullptr)));
 		negativeOneHundredFiftyThreeSlope->addChildAtPosition(negativeOneHundredFiftyThreeDashOrb, Anchor::Center);
 		negativeOneHundredFiftyThreeSlope->addChildAtPosition(negativeOneHundredFiftyThreeYellowGravityPortal, Anchor::Center);
 		negativeOneHundredFiftyThreeSlope->setColor({255, 127, 0});
@@ -228,12 +230,12 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		oneHundredFiftyThreeSlope->setRotation(180.f);
 		CCSprite* oneHundredFiftyThreeDashOrb = GameObject::createWithKey(1704);
 		oneHundredFiftyThreeDashOrb->setRotation(-ARCTAN_ONE_HALF);
-		oneHundredFiftyThreeDashOrb->runAction(CCRepeatForever::create(CCSequence::create(CCFadeOut::create(0.f), CCDelayTime::create(1.f), CCFadeIn::create(0.f), CCDelayTime::create(1.f), nullptr)));
+		oneHundredFiftyThreeDashOrb->runAction(CCRepeatForever::create(CCSequence::create(CCFadeOut::create(0.f), CCDelayTime::create(alternationDuration), CCFadeIn::create(0.f), CCDelayTime::create(alternationDuration), nullptr)));
 		CCSprite* oneHundredFiftyThreeYellowGravityPortal = GameObject::createWithKey(11);
 		oneHundredFiftyThreeYellowGravityPortal->setRotation(-ARCTAN_ONE_HALF);
 		oneHundredFiftyThreeYellowGravityPortal->setOpacity(0);
 		oneHundredFiftyThreeYellowGravityPortal->setScale(.85f);
-		oneHundredFiftyThreeYellowGravityPortal->runAction(CCRepeatForever::create(CCSequence::create(CCFadeIn::create(0.f), CCDelayTime::create(1.f), CCFadeOut::create(0.f), CCDelayTime::create(1.f), nullptr)));
+		oneHundredFiftyThreeYellowGravityPortal->runAction(CCRepeatForever::create(CCSequence::create(CCFadeIn::create(0.f), CCDelayTime::create(alternationDuration), CCFadeOut::create(0.f), CCDelayTime::create(alternationDuration), nullptr)));
 		oneHundredFiftyThreeSlope->addChildAtPosition(oneHundredFiftyThreeDashOrb, Anchor::Center);
 		oneHundredFiftyThreeSlope->addChildAtPosition(oneHundredFiftyThreeYellowGravityPortal, Anchor::Center);
 		oneHundredFiftyThreeSlope->setColor({255, 127, 0});
@@ -250,12 +252,12 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		negativeOneHundredSixteenSlope->setRotation(-90.f);
 		CCSprite* negativeOneHundredSixteenDashOrb = GameObject::createWithKey(1704);
 		negativeOneHundredSixteenDashOrb->setRotation(-ARCTAN_ONE_HALF);
-		negativeOneHundredSixteenDashOrb->runAction(CCRepeatForever::create(CCSequence::create(CCFadeOut::create(0.f), CCDelayTime::create(1.f), CCFadeIn::create(0.f), CCDelayTime::create(1.f), nullptr)));
+		negativeOneHundredSixteenDashOrb->runAction(CCRepeatForever::create(CCSequence::create(CCFadeOut::create(0.f), CCDelayTime::create(alternationDuration), CCFadeIn::create(0.f), CCDelayTime::create(alternationDuration), nullptr)));
 		CCSprite* negativeOneHundredSixteenYellowGravityPortal = GameObject::createWithKey(11);
 		negativeOneHundredSixteenYellowGravityPortal->setRotation(-ARCTAN_ONE_HALF);
 		negativeOneHundredSixteenYellowGravityPortal->setOpacity(0);
 		negativeOneHundredSixteenYellowGravityPortal->setScale(.85f);
-		negativeOneHundredSixteenYellowGravityPortal->runAction(CCRepeatForever::create(CCSequence::create(CCFadeIn::create(0.f), CCDelayTime::create(1.f), CCFadeOut::create(0.f), CCDelayTime::create(1.f), nullptr)));
+		negativeOneHundredSixteenYellowGravityPortal->runAction(CCRepeatForever::create(CCSequence::create(CCFadeIn::create(0.f), CCDelayTime::create(alternationDuration), CCFadeOut::create(0.f), CCDelayTime::create(alternationDuration), nullptr)));
 		negativeOneHundredSixteenSlope->addChildAtPosition(negativeOneHundredSixteenDashOrb, Anchor::Center);
 		negativeOneHundredSixteenSlope->addChildAtPosition(negativeOneHundredSixteenYellowGravityPortal, Anchor::Center);
 		negativeOneHundredSixteenSlope->setColor({255, 127, 0});
@@ -271,11 +273,11 @@ class $modify(MyGJRotationControl, GJRotationControl) {
 		CCSprite* oneHundredSixteenSlope = GameObject::createWithKey(674);
 		oneHundredSixteenSlope->setRotation(-90.f);
 		CCSprite* oneHundredSixteenDashOrb = GameObject::createWithKey(1704);
-		negativeOneHundredSixteenDashOrb->runAction(CCRepeatForever::create(CCSequence::create(CCFadeOut::create(0.f), CCDelayTime::create(1.f), CCFadeIn::create(0.f), CCDelayTime::create(1.f), nullptr)));
+		negativeOneHundredSixteenDashOrb->runAction(CCRepeatForever::create(CCSequence::create(CCFadeOut::create(0.f), CCDelayTime::create(alternationDuration), CCFadeIn::create(0.f), CCDelayTime::create(alternationDuration), nullptr)));
 		CCSprite* oneHundredSixteenYellowGravityPortal = GameObject::createWithKey(11);
 		oneHundredSixteenYellowGravityPortal->setOpacity(0);
 		oneHundredSixteenYellowGravityPortal->setScale(.85f);
-		oneHundredSixteenYellowGravityPortal->runAction(CCRepeatForever::create(CCSequence::create(CCFadeIn::create(0.f), CCDelayTime::create(1.f), CCFadeOut::create(0.f), CCDelayTime::create(1.f), nullptr)));
+		oneHundredSixteenYellowGravityPortal->runAction(CCRepeatForever::create(CCSequence::create(CCFadeIn::create(0.f), CCDelayTime::create(alternationDuration), CCFadeOut::create(0.f), CCDelayTime::create(alternationDuration), nullptr)));
 		oneHundredSixteenSlope->addChildAtPosition(oneHundredSixteenDashOrb, Anchor::Center);
 		oneHundredSixteenSlope->addChildAtPosition(oneHundredSixteenYellowGravityPortal, Anchor::Center);
 		oneHundredSixteenSlope->setColor({255, 127, 0});
